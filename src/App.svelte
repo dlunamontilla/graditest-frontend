@@ -1,0 +1,1 @@
+<h2>Primera plantilla para la prueba</h2>

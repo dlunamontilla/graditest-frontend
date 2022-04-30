@@ -1,0 +1,25 @@
+.header,
+.footer {
+    min-height: 70px;
+}
+
+.main {
+
+    flex-grow: 1;
+}
+
+.products {
+    display: flex;
+
+    &__item {
+        flex-grow: 1;
+
+        &--views {
+
+        }
+        
+        &--details {
+
+        }
+    }
+}

@@ -1,0 +1,37 @@
+:root {
+    font: {
+        family: "Open Sans", sans-serif, arial;
+        size: 16px;
+    }
+
+    background-color: darken(white, 90);
+    color: silver;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    
+    & > * {
+        width: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid;
+    margin: 20px auto;
+}
+
