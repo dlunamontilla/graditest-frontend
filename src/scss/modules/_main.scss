@@ -4,8 +4,12 @@
 }
 
 .main {
-
     flex-grow: 1;
+    &__section {
+        margin: 0 auto;
+        max-width: $max-width;
+        width: $width;
+    }
 }
 
 .products {
@@ -22,4 +26,11 @@
 
         }
     }
+}
+
+.line-through {
+    opacity: 0.6;
+    text-decoration: line-through;
+    font-size: 0.85em;
+    padding-left: 10px;
 }
