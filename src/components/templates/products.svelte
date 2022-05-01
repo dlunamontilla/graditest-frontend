@@ -12,13 +12,18 @@
 {#await data}
     <Loader className="loader" />
 {:then value}
-    <section class="main__section">d</section>
-
-    <section class="main__section products fadeIn">
-        <Views {value} />
-        <Details {value} />
+    <section class="main__section fadeIn">
+        <p>
+            Catalog / Sneckers / {value.title}
+        </p>
     </section>
 
+    <section class="main__section products fadeIn">
+        <form action="" method="action" class="form products__form">
+            <Views {value} />
+            <Details {value} />
+        </form>
+    </section>
 {:catch error}
     {error}
 {/await}

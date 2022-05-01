@@ -3,10 +3,10 @@ const currentValues = {
      * 
      * @param { HTMLInputElement } input
      */
-    'minus-button': function(input) {
+    'minus-button': function (input) {
         let currentValue = Number(input.value);
 
-        input.value = (currentValue > 0) 
+        input.value = (currentValue > 0)
             ? --currentValue
             : 0;
     },
@@ -15,9 +15,9 @@ const currentValues = {
      * 
      * @param { HTMLInputElement } input
      */
-    'sum-button': function(input) {
+    'sum-button': function (input) {
         let currentValue = Number(input.value);
-        input.value = currentValue < 0 
+        input.value = currentValue < 0
             ? 0
             : ++currentValue;
     }
@@ -45,12 +45,26 @@ function isInput(any) {
 }
 
 /**
+ * 
+ * @param {any} any Evaluar si el valor que se pasa como argumento es un objeto.
+ * @returns { boolean }
+ */
+const isObject = (any) => Object.prototype.toString.call(any) === "[object Object]";
+
+/**
  * @param { ClickEvent } e
  * @returns { void }
  */
 function setInputValue(e) {
-    const { target } = e;
+    const { target, key } = e;
     const { element } = target.dataset;
+
+    const regex = /([0-9]|Backspace|Control|Delete|Tab|Shift)/i
+
+
+    if (key) {
+        if (!regex.test(key)) e.preventDefault();
+    }
 
     /** @type { HTMLInputElement } */
     const input = target.parentNode.children[1];
@@ -62,7 +76,37 @@ function setInputValue(e) {
     }
 }
 
+/**
+ * 
+ * @param {Array<Object<string, any>>} array Eliminar duplicados en un array de objetos.
+ * @param { string } property Propiedad de referencia del objeto.
+ * @returns { Array<Object<string, any>> }
+ */
+const uniqueValue = (array, property = "option2") => {
+    if (!Array.isArray(array)) return [{}];
+
+    const object = {};
+    const variants = [];
+
+    array.forEach(element => {
+        if (isObject(element) && (property in element)) {
+            object[element[property]] = element;
+        }
+    });
+
+    for (const property in object) {
+        variants.push(object[property]);
+    }
+
+    array.length = 0;
+    array.push(...variants);
+    variants.length = 0;
+    
+    return array;
+}
+
 export {
     getData,
-    setInputValue
+    setInputValue,
+    uniqueValue
 }

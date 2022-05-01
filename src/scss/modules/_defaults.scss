@@ -4,8 +4,11 @@
         size: 16px;
     }
 
-    background-color: darken(white, 90);
-    color: silver;
+    background-color: $color-secundario;
+    color: $text-color;
+    line-height: 1.6;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,5 +36,15 @@ hr {
     border: 0;
     border-bottom: 1px solid;
     margin: 20px auto;
+}
+
+a {
+    text-decoration: none;
+    transition: 300ms ease;
+    outline: 1px solid transparent;
+
+    &:active {
+        transition: none;
+    }
 }
 

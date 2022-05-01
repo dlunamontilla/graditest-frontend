@@ -9,21 +9,45 @@
         margin: 0 auto;
         max-width: $max-width;
         width: $width;
+
+        &:first-of-type {
+            padding-top: 40px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 40px;
+        }
     }
 }
 
 .products {
-    display: flex;
+
+    align-items: center;
+
+    &, &__form {
+        display: flex;
+    }
 
     &__item {
-        flex-grow: 1;
+        padding: 20px;
 
         &--views {
+            flex-grow: 1;
+            flex-shrink: 0;
 
+            padding: 10px;
+            
+            background-color: rgba(white, 0.1);
         }
         
-        &--details {
+        &--price {
+            padding: 20px;
 
+            
+            @media screen and (min-width: 751px) {
+                max-width: 600px;
+                flex-basis: 50%;
+            }
         }
     }
 }
