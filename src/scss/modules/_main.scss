@@ -315,3 +315,28 @@
         }
     }
 }
+
+.attribution {
+    margin: 0 auto;
+    max-width: $max-width;
+    width: $width;
+    font-size: 0.9rem;
+    padding: 20px 0;
+
+    a {
+        text-decoration: none;
+        font: inherit;
+        transition: 300ms ease;
+        opacity: 0.7;
+        color: yellow;
+
+        &:hover {
+            opacity: 0.95;
+        }
+
+        &:active {
+            opacity: 0.7;
+            transition: none;
+        }
+    }
+}
