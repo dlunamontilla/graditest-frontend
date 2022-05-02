@@ -35,3 +35,5 @@ Después de haber seguido los pasos anteriores puede correr el proyecto:
 ```bash
 npm run dev
 ```
+
+> Preparándose para Heroku...
