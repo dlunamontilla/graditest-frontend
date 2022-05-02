@@ -14,7 +14,7 @@ O mediante HTTP:
 git clone https://github.com/dlunamontilla/graditest-frontend.git
 ```
 
-Despues de clonar el proyecto, proceda a instalar las dependencias.
+Despues de clonar el proyecto proceda a instalar las dependencias.
 
 ```bash
 npm install
@@ -22,12 +22,10 @@ npm install
 
 ## Otras dependencias
 
-Debe proceder a instalar las otras dependencias para poder utilizar el proyecto:
+Dado que se está utilizando un pre-procesador **`SASS`** debe instalar las siguientes dependencias.
 
 ```bash
-npm install --save-dev rollup-plugin-scss@3 sass scss
-npm install --save graphql
-npm install --save @shopify/shopify-api
+npm install --save-dev rollup-plugin-scss@3 scss sass
 ```
 
 ## Correr el proyecto
