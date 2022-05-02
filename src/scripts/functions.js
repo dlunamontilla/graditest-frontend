@@ -6,9 +6,9 @@ const currentValues = {
     'minus-button': function (input) {
         let currentValue = Number(input.value);
 
-        input.value = (currentValue > 0)
+        input.value = (currentValue > 1)
             ? --currentValue
-            : 0;
+            : 1;
     },
 
     /**
@@ -17,8 +17,8 @@ const currentValues = {
      */
     'sum-button': function (input) {
         let currentValue = Number(input.value);
-        input.value = currentValue < 0
-            ? 0
+        input.value = currentValue < 1
+            ? 1
             : ++currentValue;
     }
 };

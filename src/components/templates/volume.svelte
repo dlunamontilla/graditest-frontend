@@ -9,7 +9,7 @@
 >
     <div class="volume">
         <button type="button" class="button button--count" data-element="minus-button">-</button>
-        <input type="number" name="volume" id="volume" min="0" value="0" on:keydown={setInputValue} />
+        <input type="number" name="volume" id="volume" min="1" value="1" on:keydown={setInputValue} />
         <button type="button" class="button button--count" data-element="sum-button">+</button>
     </div>
 

@@ -8,6 +8,30 @@
     animation: fadeIn 300ms ease 1;
 }
 
+// EL USUARIO PRESIONA LA FLECHA DERECHA
+@keyframes translate-right-x {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.translate-right-x {
+    animation: translate-right-x 250ms ease 1;
+}
+
+// EL USUARIO PRESIONA LA FLECHA IZQUIERDA
+@keyframes translate-left-x {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
+.translate-left-x {
+    animation: translate-left-x 300ms ease 1;
+}
+
+// Color de su contenedor, su color y tamaño de 
+// la animación de carga:
 .loader {
     --loader-background: #{rgba(white, 0.3)};
     --loader-color: white;
