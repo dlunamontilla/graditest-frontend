@@ -149,11 +149,12 @@
         }
 
         &__left {
-
+            background-image: linear-gradient(to right, rgba(black, 0.2), transparent)
         }
 
         &__right {
             --rotate: 180deg;
+            background-image: linear-gradient(to left, rgba(black, 0.2), transparent);
         }
     }
 
