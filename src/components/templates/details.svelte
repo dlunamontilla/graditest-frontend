@@ -50,7 +50,7 @@
         </div>
 
         <div class="details__volume">
-            <Volume />
+            <Volume price={value.price} />
         </div>
 
         <div class="details__button">
