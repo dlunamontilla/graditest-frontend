@@ -54,8 +54,8 @@
         </div>
 
         <div class="details__button">
-            <button class="button button--favorite">Add to favourite</button>
-            <button class="button button--cart">Add to cart</button>
+            <button type="button" class="button button--favorite">Add to favourite</button>
+            <button type="button" class="button button--cart">Add to cart</button>
         </div>
 
         <div class="details__description">

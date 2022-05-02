@@ -51,6 +51,12 @@ function isInput(any) {
  */
 const isObject = (any) => Object.prototype.toString.call(any) === "[object Object]";
 
+
+/**
+ * @type { number } - Actualizar el valor numérico con el teclado
+ */
+let currentValue = 0;
+
 /**
  * @param { ClickEvent } e
  * @returns { void }
@@ -59,11 +65,20 @@ function setInputValue(e) {
     const { target, key } = e;
     const { element } = target.dataset;
 
+    console.log({ key });
     const regex = /([0-9]|Backspace|Control|Delete|Tab|Shift)/i
 
+    currentValue = Number(target?.value?.trim())
+    currentValue = isNaN(currentValue) ? 0 : currentValue;
 
     if (key) {
         if (!regex.test(key)) e.preventDefault();
+
+        if (key === 'ArrowUp' || key === 'ArrowRight') ++currentValue
+        if (key === 'ArrowDown' || key === 'ArrowLeft') --currentValue
+
+        currentValue = currentValue < 1 ? 1 : currentValue;
+        target.value = currentValue;
     }
 
     /** @type { HTMLInputElement } */
@@ -101,12 +116,13 @@ const uniqueValue = (array, property = "option2") => {
     array.length = 0;
     array.push(...variants);
     variants.length = 0;
-    
+
     return array;
 }
 
 export {
     getData,
     setInputValue,
-    uniqueValue
+    uniqueValue,
+    isInput
 }
