@@ -45,7 +45,7 @@
 >
     <div class="volume">
         <button type="button" class="button button--count" data-element="minus-button">-</button>
-        <input type="number" name="volume" id="inputVolume" min="1" value="1" on:keydown={input} />
+        <input type="number" name="volume" id="inputVolume" min="1" value="1" on:input={input} on:keydown={input} />
         <button type="button" class="button button--count" data-element="sum-button">+</button>
     </div>
 
